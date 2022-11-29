@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Code_Legend.Settings"
+             Title="Settings"
+             Style="{StaticResource page}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button" x:Key="btn">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=Black, Dark=White}"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=Black, Dark=White}"/>
+            </Style>
+
+            <Style TargetType="ContentPage" x:Key="page">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark=#212121}"/>
+            </Style>
+
+            <Style TargetType="Grid" x:Key="grid">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark=#404040}"/>
+            </Style>
+
+            <Style TargetType="Switch" x:Key="switch">
+                <Setter Property="ThumbColor" Value="{AppThemeBinding Light=#212121, Dark=White}"/>
+            </Style>
+
+            <Style TargetType="Entry" x:Key="entry">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=Black, Dark=White}"/>
+                <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light=Black, Dark=White}"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid WidthRequest="430" HeightRequest="850" HorizontalOptions="Center" VerticalOptions="Center">
+
+                <Grid Style="{StaticResource grid}" WidthRequest="430" HeightRequest="250" HorizontalOptions="Center" VerticalOptions="Start">
+
+                    <ImageButton x:Name="profileImg" Clicked="ImageButton_Clicked" Source="user.png" WidthRequest="90" HeightRequest="90" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,50,0,0" CornerRadius="60"/>
+
+                    <Entry Style="{StaticResource entry}" Placeholder="Username" x:Name="profileName" TextChanged="Entry_TextChanged" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,50,0,0"/>
+
+                    <ImageButton x:Name="UsernameEditBtn" Clicked="UsernameEditBtn_Clicked" BackgroundColor="Transparent" Source="edit_pencil_img.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="End" VerticalOptions="Center" Margin="0,50,100,0"/>
+
+                    <Button BackgroundColor="Transparent" Style="{StaticResource btn}" BorderColor="MediumBlue" BorderWidth="1.5" Text="Begginer" FontSize="12" WidthRequest="100" HeightRequest="45" CornerRadius="20" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,30"/>
+
+                </Grid>
+
+                <Grid Style="{StaticResource grid}" WidthRequest="440" HeightRequest="75" HorizontalOptions="Center" VerticalOptions="Start" Margin="20,250,0,0">
+
+                    <Grid HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="220" HeightRequest="75" Margin="20,0,0,0">
+
+                        <Button Style="{StaticResource label}" BackgroundColor="Transparent" BorderColor="Black" BorderWidth="1" CornerRadius="0" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="195" HeightRequest="75"/>
+
+                        <Label Style="{StaticResource label}" Text="0/8" HorizontalOptions="Center" VerticalOptions="Center" Margin="-40,0,0,20"/>
+
+                        <Label Style="{StaticResource label}" Text="Lessons" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center" Margin="-40,20,0,0"/>
+
+                    </Grid>
+
+                    <Grid Style="{StaticResource grid}" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="220" HeightRequest="75">
+
+                        <Button Style="{StaticResource label}" BackgroundColor="Transparent" BorderColor="Black" BorderWidth="1" CornerRadius="0" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="195" HeightRequest="75"/>
+
+                        <Label Style="{StaticResource label}" Text="0/8" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,20"/>
+
+                        <Label Style="{StaticResource label}" Text="Achievements" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20,0,0"/>
+
+                    </Grid>
+
+                </Grid>
+
+                <!--Settings-->
+                <Grid WidthRequest="420" HeightRequest="275" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0">
+                    <Label Text="Settings" Style="{StaticResource label}" FontSize="20" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,150,0,0"/>
+
+                    <Grid HeightRequest="650" Margin="80,180,0,0">
+                        <Image Source="dark_mode.png" WidthRequest="28" HeightRequest="28" HorizontalOptions="Start" Margin="0,30,0,0"/>
+                        <Label Text="Dark mode" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center" Margin="60,30,0,0"/>
+                        <Switch Toggled="slider_Toggled" Style="{StaticResource switch}" x:Name="slider" HorizontalOptions="Center" WidthRequest="20" HeightRequest="20" Margin="130,30,0,0"/>
+
+                        <Image Source="sign_out.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start" VerticalOptions="Center" Margin="0,140,0,0"/>
+                        <Label Text="Sign out" FontSize="18" VerticalOptions="Center" Margin="60,140,0,0"/>
+                        <Image Source="right_forward.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center" Margin="130,140,0,0"/>
+
+                        <Image Source="about_app_logo.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start" VerticalOptions="Center" Margin="0,250,0,0"/>
+                        <Label Text="About App" FontSize="18" VerticalOptions="Center" Margin="60,250,0,0"/>
+                        <Image Source="right_forward.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center" Margin="130,250,0,0"/>
+
+
+                        <Image Source="aboutus_white_logo.png" WidthRequest="40" HeightRequest="40" HorizontalOptions="Start" VerticalOptions="Center" Margin="0,360,0,0"/>
+                        <Label Text="About us" FontSize="18" VerticalOptions="Center" Margin="60,360,0,0"/>
+                        <Image Source="right_forward.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center" Margin="130,360,0,0"/>
+
+                    </Grid>
+
+                </Grid>
+            </Grid>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>

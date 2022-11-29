@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Code_Legend.Main_Basic"
+             Title="Basic C#"
+             Style="{StaticResource page}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Settings" IconImageSource="settings_img.png" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button" x:Key="btn">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#212121, Dark=White}"/>
+                <Setter Property="BorderColor" Value="{AppThemeBinding Light=#212121, Dark=White}"/>
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark=#212121}"/>
+            </Style>
+
+
+            <Style TargetType="ContentPage" x:Key="page">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark=#212121}"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Grid BackgroundColor="Transparent" WidthRequest="390" HeightRequest="650" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,15,0,0">
+
+                <Button Text="Frist steps" Style="{StaticResource btn}" BorderWidth="1" CornerRadius="0" FontSize="Medium" ImageSource="firststeps_img.png" WidthRequest="300" HeightRequest="50" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,140,0,0" Clicked="Button_Clicked"/>
+                <Button Text="Variables in C#" Style="{StaticResource btn}" BorderWidth="1" CornerRadius="0" FontSize="Medium" ImageSource="page_img.png" WidthRequest="300" HeightRequest="50" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,210,0,0" Clicked="Button_Clicked_1"/>
+                <Button Text="Methods in C#" Style="{StaticResource btn}" BorderWidth="1" CornerRadius="0" FontSize="Medium" ImageSource="function_basic.png" WidthRequest="300" HeightRequest="50" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,-30,0,0" Clicked="Button_Clicked_2"/>
+                <Button Text="Elements in C#" Style="{StaticResource btn}" BorderWidth="1" CornerRadius="0" FontSize="Medium" ImageSource="elements_basic.png" WidthRequest="300" HeightRequest="50" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,120,0,0" Clicked="Button_Clicked_3"/>
+                <Button Text="Controls in C#" Style="{StaticResource btn}" BorderWidth="1" CornerRadius="0" FontSize="Medium" ImageSource="controls_basic.png" WidthRequest="300" HeightRequest="50" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,270,0,0" Clicked="Button_Clicked_4"/>
+                <Button Text="Events in C#" Style="{StaticResource btn}" BorderWidth="1" CornerRadius="0" FontSize="Medium" ImageSource="events_basic.png" WidthRequest="300" HeightRequest="50" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,420,0,0" Clicked="Button_Clicked_5"/>
+                <Button Style="{StaticResource btn}" Text="Test" BorderWidth="1" CornerRadius="0" FontSize="Medium" ImageSource="test_pencil_img.png" WidthRequest="300" HeightRequest="50" VerticalOptions="End" HorizontalOptions="Center" Margin="0,0,0,15" Clicked="Button_Clicked_6"/>
+
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

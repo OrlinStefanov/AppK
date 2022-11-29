@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Code_Legend.MainPage"
+             Title="Selections">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Settings" IconImageSource="settings_img.png" Clicked="SettingsBtn_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style TargetType="Button" x:Key="btn">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark=#212121}"/>
+
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#212121, Dark=White}"/>
+                <Setter Property="BorderColor" Value="{AppThemeBinding Light=#212121, Dark=White}"/>
+            </Style>
+
+            <Style TargetType="ContentPage" x:Key="appTheme">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark=#212121}"/>
+            </Style>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <!-- .NET MAUI Selections -->
+
+            <Grid x:Name="SelectionsGrid" WidthRequest="390" HeightRequest="550" VerticalOptions="Center" HorizontalOptions="Center">
+
+                <Button Style="{StaticResource btn}" x:Name="UserInterfaceBtn" Clicked="UserInterfaceBtn_Clicked" Text="User Interface" FontSize="Medium" BorderWidth="1.5" CornerRadius="0" WidthRequest="270" HeightRequest="70"  HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,200"/>
+
+                <Button Style="{StaticResource btn}" x:Name="FundamentalsBtn" Clicked="FundamentalsBtn_Clicked" Text="Fundamentals" FontSize="Medium" BorderWidth="1.5" CornerRadius="0" WidthRequest="270" HeightRequest="70" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,200,0,0"/>
+
+                <Button Style="{StaticResource btn}" x:Name="Fundamentals2Btn" Text="Basic C#" FontSize="Medium" BorderWidth="1.5" CornerRadius="0" WidthRequest="270" HeightRequest="70" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0" Clicked="Fundamentals2Btn_Clicked"/>
+
+                <Button Style="{StaticResource btn}" x:Name="TestBtn" Text="Tests" FontSize="Medium" BorderWidth="1.5" CornerRadius="0" WidthRequest="270" HeightRequest="70" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,40" Clicked="TestBtn_Clicked"/>
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

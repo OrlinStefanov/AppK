@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Code_Legend.Main_Test"
+             Title="Main_Test"
+             Style="{StaticResource page}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Settings" IconImageSource="settings_img.png" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button" x:Key="btn">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#212121, Dark=White}"/>
+                <Setter Property="BorderColor" Value="{AppThemeBinding Light=#212121, Dark=White}"/>
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark=#212121}"/>
+            </Style>
+
+            <Style TargetType="ContentPage" x:Key="page">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark=#212121}"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Grid BackgroundColor="Transparent" WidthRequest="380" HeightRequest="650" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,10,0,0">
+
+                <Button Style="{StaticResource btn}" Text="Userinterface-first steps" BorderWidth="1" CornerRadius="0" FontSize="Medium" ImageSource="test_pencil_img.png" WidthRequest="300" HeightRequest="50" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,140,0,0" Clicked="Button_Clicked"/>
+
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
